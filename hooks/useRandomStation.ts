@@ -6,7 +6,11 @@ const GET_RANDOM_STATION = gql`
   query RandomStationQuery {
     random {
       name
-      groupId
+      lines {
+        id
+        name
+        lineColorC
+      }
     }
   }
 `;
@@ -23,7 +27,6 @@ const useRandomStation = () => {
   return {
     station: data?.random,
     loading: called && loading,
-    refetch: fetchRandomStation,
   };
 };
 
