@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import styled from "styled-components";
 import Button from "../components/Button";
 import parenthesisRegexp from "../constants/parenthesisRegexp";
@@ -10,16 +11,19 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 16px;
 `;
 
 const PreText = styled.h2`
   font-weight: bold;
   margin-bottom: 1rem;
+  text-align: center;
 `;
 
 const StationName = styled.h1`
   font-size: 3rem;
   font-weight: bold;
+  text-align: center;
 `;
 
 const LinesContainer = styled.ul`
@@ -27,6 +31,7 @@ const LinesContainer = styled.ul`
   margin-top: 16px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const LineRow = styled.li`
@@ -49,6 +54,11 @@ const Home: NextPage = () => {
 
   return (
     <Container>
+      <Head>
+        <title>ネキ</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+
       <PreText>あなたが次に行くべき駅は...</PreText>
       <StationName>{station.name}</StationName>
       <LinesContainer>
