@@ -3,6 +3,7 @@ import Head from "next/head";
 import styled from "styled-components";
 import Button from "../components/Button";
 import parenthesisRegexp from "../constants/parenthesisRegexp";
+import PREFECTURES from "../constants/prefectures";
 import useRandomStation from "../hooks/useRandomStation";
 
 const Container = styled.div`
@@ -69,7 +70,11 @@ const Home: NextPage = () => {
         ))}
       </LinesContainer>
       <ShareLink
-        href={`https://twitter.com/intent/tweet?url=https://neki.tinykitten.me&text=私が次に行くべき駅は、${station.name}駅でした！&via=tinykitten8&related=tinykitten8`}
+        href={`https://twitter.com/intent/tweet?url=https://neki.tinykitten.me&text=私が次に行くべき駅は、${
+          station.name
+        }駅(${
+          PREFECTURES[station.prefId - 1]
+        })でした！&via=tinykitten8&related=tinykitten8`}
         target="_blank"
         rel="noreferrer noopener"
       >

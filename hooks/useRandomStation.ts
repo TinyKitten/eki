@@ -6,6 +6,7 @@ const GET_RANDOM_STATION = gql`
   query RandomStationQuery {
     random {
       name
+      prefId
       lines {
         id
         name
