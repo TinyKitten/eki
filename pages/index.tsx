@@ -42,6 +42,7 @@ const LineRow = styled.li`
   border-radius: 16px;
   margin: 8px;
 `;
+
 const ReloadButton = styled(Button)`
   margin-top: 32px;
 `;
