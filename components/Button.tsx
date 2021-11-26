@@ -5,6 +5,7 @@ type Props = {
   color?: string;
   children: React.ReactNode;
   className?: string;
+  onClick?: () => void;
 };
 
 const ButtonBase = styled.button`
@@ -27,12 +28,13 @@ const ButtonBase = styled.button`
   }
 `;
 
-const Button: React.FC<Props> = ({ color, children, className }: Props) => {
+const Button: React.FC<Props> = ({ color, children, className, onClick }: Props) => {
   const themeContext = useContext(ThemeContext);
   return (
     <ButtonBase
       style={{ backgroundColor: color || themeContext.primary }}
       className={className}
+      onClick={onClick}
     >
       {children}
     </ButtonBase>
