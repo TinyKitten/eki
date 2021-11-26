@@ -8,6 +8,7 @@ import useRandomStation from "../hooks/useRandomStation";
 
 const Container = styled.div`
   min-height: 100vh;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,15 +43,23 @@ const LineRow = styled.li`
   margin: 8px;
 `;
 
-const ShareLink = styled.a`
+const ReloadButton = styled(Button)`
   margin-top: 32px;
 `;
 
+const ShareLink = styled.a`
+  margin-top: 16px;
+`;
+
 const Home: NextPage = () => {
-  const { station, loading } = useRandomStation();
+  const { station, loading, refetch } = useRandomStation();
 
   if (loading || !station) {
-    return <p>Loading...</p>;
+    return (
+      <Container>
+        <p>Loading...</p>
+      </Container>
+    );
   }
 
   return (
@@ -69,12 +78,11 @@ const Home: NextPage = () => {
           </LineRow>
         ))}
       </LinesContainer>
+      <ReloadButton onClick={() => refetch()} color="#5f5f5f">別の駅を探す</ReloadButton>
       <ShareLink
-        href={`https://twitter.com/intent/tweet?url=https://neki.tinykitten.me&text=私が次に行くべき駅は、${
-          station.name
-        }駅(${
-          PREFECTURES[station.prefId - 1]
-        })でした！&via=tinykitten8&related=tinykitten8`}
+        href={`https://twitter.com/intent/tweet?url=https://neki.tinykitten.me&text=私が次に行くべき駅は、${station.name
+          }駅(${PREFECTURES[station.prefId - 1]
+          })でした！&via=tinykitten8&related=tinykitten8`}
         target="_blank"
         rel="noreferrer noopener"
       >

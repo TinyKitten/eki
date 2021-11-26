@@ -17,7 +17,7 @@ const GET_RANDOM_STATION = gql`
 `;
 
 const useRandomStation = () => {
-  const [fetchRandomStation, { called, loading, data }] =
+  const [fetchRandomStation, { called, loading, data, refetch }] =
     useLazyQuery<{ random: Station }>(GET_RANDOM_STATION);
 
   useEffect(() => {
@@ -28,6 +28,7 @@ const useRandomStation = () => {
   return {
     station: data?.random,
     loading: called && loading,
+    refetch,
   };
 };
 
