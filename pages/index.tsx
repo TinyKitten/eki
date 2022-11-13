@@ -107,7 +107,7 @@ const Home: NextPage = () => {
         target="_blank"
         rel="noreferrer noopener"
       >
-        TrainLCDアプリいかがですか
+        TrainLCDアプリいかがですか(趣味で作ってるので無料ですよ)
       </ExternalLink>
     </Container>
   );
