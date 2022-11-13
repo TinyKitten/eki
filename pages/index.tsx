@@ -57,6 +57,7 @@ const ExternalLink = styled.a`
   text-decoration: none;
   font-weight: bold;
   text-align: center;
+  line-height: 1.5;
 `;
 
 const Home: NextPage = () => {
