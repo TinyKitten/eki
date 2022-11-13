@@ -11,6 +11,9 @@ const GET_RANDOM_STATION = gql`
         id
         name
         lineColorC
+        lineSymbols {
+          lineSymbol
+        }
       }
     }
   }

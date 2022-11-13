@@ -74,6 +74,9 @@ const Home: NextPage = () => {
       <LinesContainer>
         {station.lines.map((line) => (
           <LineRow color={`#${line.lineColorC}` || "#212121"} key={line.id}>
+            {line.lineSymbols.length
+              ? `[${line.lineSymbols.map((ls) => ls.lineSymbol).join("/")}] `
+              : null}
             {line.name.replace(parenthesisRegexp, "")}
           </LineRow>
         ))}
