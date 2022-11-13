@@ -51,6 +51,13 @@ const ShareLink = styled.a`
   margin-top: 16px;
 `;
 
+const ExternalLink = styled.a`
+  color: white;
+  margin-top: 48px;
+  text-decoration: none;
+  font-weight: bold;
+`;
+
 const Home: NextPage = () => {
   const { station, loading, refetch } = useRandomStation();
 
@@ -81,16 +88,27 @@ const Home: NextPage = () => {
           </LineRow>
         ))}
       </LinesContainer>
-      <ReloadButton onClick={() => refetch()} color="#5f5f5f">別の駅を探す</ReloadButton>
+      <ReloadButton onClick={() => refetch()} color="#5f5f5f">
+        別の駅を探す
+      </ReloadButton>
       <ShareLink
-        href={`https://twitter.com/intent/tweet?url=https://neki.tinykitten.me&text=私が次に行くべき駅は、${station.name
-          }駅(${PREFECTURES[station.prefId - 1]
-          })でした！&via=tinykitten8&related=tinykitten8`}
+        href={`https://twitter.com/intent/tweet?url=https://neki.tinykitten.me&text=私が次に行くべき駅は、${
+          station.name
+        }駅(${
+          PREFECTURES[station.prefId - 1]
+        })でした！&via=tinykitten8&related=tinykitten8`}
         target="_blank"
         rel="noreferrer noopener"
       >
         <Button color="#1DA1F2">Twitterでシャアする</Button>
       </ShareLink>
+      <ExternalLink
+        href="https://trainlcd.app"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        TrainLCDアプリいかがですか
+      </ExternalLink>
     </Container>
   );
 };
