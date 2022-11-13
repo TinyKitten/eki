@@ -60,6 +60,10 @@ const ExternalLink = styled.a`
   line-height: 1.5;
 `;
 
+const SmallText = styled.span`
+  font-size: 0.75rem;
+`;
+
 const Home: NextPage = () => {
   const { station, loading, refetch } = useRandomStation();
 
@@ -109,7 +113,9 @@ const Home: NextPage = () => {
         target="_blank"
         rel="noreferrer noopener"
       >
-        TrainLCDアプリいかがですか(趣味で作ってるので無料ですよ)
+        TrainLCDアプリいかがですか
+        <br />
+        <SmallText>(趣味で作ってるので無料ですよ)</SmallText>
       </ExternalLink>
     </Container>
   );
