@@ -9,7 +9,6 @@ import useRandomStation from "../hooks/useRandomStation";
 
 const Container = styled.div`
   min-height: 100vh;
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
