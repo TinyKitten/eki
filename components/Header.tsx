@@ -11,6 +11,7 @@ const Root = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #212121;
 `;
 
 const Title = styled.div`
