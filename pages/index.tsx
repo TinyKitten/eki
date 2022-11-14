@@ -76,6 +76,9 @@ const Home: NextPage = () => {
   if (loading || !station) {
     return (
       <Container>
+        <Head>
+          <title>ネキ</title>
+        </Head>
         <Header />
         <p>Loading...</p>
       </Container>
@@ -86,11 +89,9 @@ const Home: NextPage = () => {
     <Container>
       <Head>
         <title>ネキ</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
       <Header />
-
       <PreText>あなたが次に行くべき駅は...</PreText>
       <StationName>{station.name}</StationName>
       <AddressText>{station.address}</AddressText>
