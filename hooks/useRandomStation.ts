@@ -7,6 +7,7 @@ const GET_RANDOM_STATION = gql`
     random {
       name
       prefId
+      address
       lines {
         id
         name

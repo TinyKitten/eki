@@ -28,6 +28,11 @@ const StationName = styled.h1`
   text-align: center;
 `;
 
+const AddressText = styled.p`
+  text-align: center;
+  margin-top: 16px;
+`;
+
 const LinesContainer = styled.ul`
   margin: 0;
   margin-top: 16px;
@@ -84,6 +89,7 @@ const Home: NextPage = () => {
 
       <PreText>あなたが次に行くべき駅は...</PreText>
       <StationName>{station.name}</StationName>
+      <AddressText>{station.address}</AddressText>
       <LinesContainer>
         {station.lines.map((line) => (
           <LineRow color={`#${line.lineColorC}` || "#212121"} key={line.id}>

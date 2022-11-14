@@ -6,7 +6,7 @@ export interface Station {
   prefId: number;
   name: string;
   lines: Line[];
-  __typename: "Station";
+  address: string;
 }
 
 export interface Line {
@@ -14,5 +14,4 @@ export interface Line {
   lineColorC: string | null;
   name: string;
   lineSymbols: LineSymbols[];
-  __typename: "Line";
 }
