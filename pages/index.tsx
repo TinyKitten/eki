@@ -14,6 +14,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 16px;
+  overflow: hidden;
 `;
 
 const PreText = styled.h2`
