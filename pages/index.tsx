@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import styled from "styled-components";
 import Button from "../components/Button";
+import Header from "../components/Header";
 import parenthesisRegexp from "../constants/parenthesisRegexp";
 import PREFECTURES from "../constants/prefectures";
 import useRandomStation from "../hooks/useRandomStation";
@@ -86,6 +87,8 @@ const Home: NextPage = () => {
         <title>ネキ</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+
+      <Header />
 
       <PreText>あなたが次に行くべき駅は...</PreText>
       <StationName>{station.name}</StationName>
