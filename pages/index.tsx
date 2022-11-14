@@ -76,6 +76,7 @@ const Home: NextPage = () => {
   if (loading || !station) {
     return (
       <Container>
+        <Header />
         <p>Loading...</p>
       </Container>
     );
