@@ -9,6 +9,9 @@ import useRandomStation from "../hooks/useRandomStation";
 
 const Container = styled.div`
   min-height: 100vh;
+  @supports (-webkit-touch-callout: none) {
+    min-height: -webkit-fill-available;
+  }
   display: flex;
   justify-content: center;
   align-items: center;

@@ -4,6 +4,11 @@ const GlobalStyle = createGlobalStyle`
     * {
         box-sizing: border-box;
     }
+    @supports (-webkit-touch-callout: none) {
+    html {
+    min-height: -webkit-fill-available;
+    }
+    }
     html,
     body,
     div,
