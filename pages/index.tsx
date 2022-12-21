@@ -78,60 +78,63 @@ const Home: NextPage = () => {
 
   if (loading || !station) {
     return (
-      <Container>
+      <>
         <Head>
           <title>ネキ</title>
         </Head>
         <Header />
-        <p>Loading...</p>
-      </Container>
+        <Container>
+          <p>Loading...</p>
+        </Container>
+      </>
     );
   }
 
   return (
-    <Container>
+    <>
       <Head>
         <title>ネキ</title>
       </Head>
-
       <Header />
-      <PreText>あなたが次に行くべき駅は...</PreText>
-      <StationName>{station.name}</StationName>
-      <AddressText>{station.address}</AddressText>
-      <LinesContainer>
-        {station.lines.map((line) => (
-          <LineRow color={`#${line.lineColorC}` || "#212121"} key={line.id}>
-            {line.lineSymbols.length
-              ? `[${line.lineSymbols.map((ls) => ls.lineSymbol).join("/")}] `
-              : null}
-            {line.name.replace(parenthesisRegexp, "")}
-          </LineRow>
-        ))}
-      </LinesContainer>
-      <ReloadButton onClick={() => refetch()} color="#5f5f5f">
-        別の駅を探す
-      </ReloadButton>
-      <ShareLink
-        href={`https://twitter.com/intent/tweet?url=https://neki.tinykitten.me&text=私が次に行くべき駅は、${
-          station.name
-        }駅(${
-          PREFECTURES[station.prefId - 1]
-        })でした！&via=tinykitten8&related=tinykitten8`}
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        <Button color="#1DA1F2">Twitterでシャアする</Button>
-      </ShareLink>
-      <ExternalLink
-        href="https://trainlcd.app"
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        TrainLCDアプリいかがですか
-        <br />
-        <SmallText>(趣味で作ってるので無料ですよ)</SmallText>
-      </ExternalLink>
-    </Container>
+      <Container>
+        <PreText>あなたが次に行くべき駅は...</PreText>
+        <StationName>{station.name}</StationName>
+        <AddressText>{station.address}</AddressText>
+        <LinesContainer>
+          {station.lines.map((line) => (
+            <LineRow color={`#${line.lineColorC}` || "#212121"} key={line.id}>
+              {line.lineSymbols.length
+                ? `[${line.lineSymbols.map((ls) => ls.lineSymbol).join("/")}] `
+                : null}
+              {line.name.replace(parenthesisRegexp, "")}
+            </LineRow>
+          ))}
+        </LinesContainer>
+        <ReloadButton onClick={() => refetch()} color="#5f5f5f">
+          別の駅を探す
+        </ReloadButton>
+        <ShareLink
+          href={`https://twitter.com/intent/tweet?url=https://neki.tinykitten.me&text=私が次に行くべき駅は、${
+            station.name
+          }駅(${
+            PREFECTURES[station.prefId - 1]
+          })でした！&via=tinykitten8&related=tinykitten8`}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <Button color="#1DA1F2">Twitterでシャアする</Button>
+        </ShareLink>
+        <ExternalLink
+          href="https://trainlcd.app"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          TrainLCDアプリいかがですか
+          <br />
+          <SmallText>(趣味で作ってるので無料ですよ)</SmallText>
+        </ExternalLink>
+      </Container>
+    </>
   );
 };
 
