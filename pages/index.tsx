@@ -104,7 +104,10 @@ const Home: NextPage = () => {
           {station.lines.map((line) => (
             <LineRow color={`#${line.lineColorC}` || "#212121"} key={line.id}>
               {line.lineSymbols.length
-                ? `[${line.lineSymbols.map((ls) => ls.lineSymbol).join("/")}] `
+                ? `[${line.lineSymbols
+                    .filter((ls) => ls.lineSymbol !== "0") // 札幌駅をしばく
+                    .map((ls) => ls.lineSymbol)
+                    .join("/")}] `
                 : null}
               {line.name.replace(parenthesisRegexp, "")}
             </LineRow>
